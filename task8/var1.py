@@ -1,19 +1,20 @@
-import itertools #Всегда
+from itertools import product #всегда
 
-abc = '012345' #Откуда берем цифры
+abc = '012345' #какие цифры или буквы есть
 
-combinations = itertools.product(abc, abc, abc, abc, abc, abc) #Все 6-тизначные комбинации
-bad_words = ['10', '30', '50', '01', '03', '05'] #Последовательности которых быть не должно
+bad_words = ['10', '01', '30', '03', '50', '05'] # каких не должно быть
+
+combs = product(abc, abc, abc, abc, abc, abc) #составляем комбинации
 cnt = 0 # счетчик
 
-for comb in combinations: #Перебираем все комбинации
-    comb = ''.join(comb) #Переводим комбинацию в строку
-    if comb.count('0') == 1: #Первое условие
-        flag = True #Флаг для проверки условия 2
-        for word in bad_words:
-            if word in comb:
-                flag = False
-        if flag == True: #Проверка условия 2
-            cnt += 1
+for comb in combs: # Перебираем комбинации
+    comb = ''.join(comb) # Превращаем в строку
+    if comb[0] != '0' and comb.count('0') == 1: #Проверяем условия
+        flag = True # флаг проверки отстутсвия
+        for bw in bad_words: # все плохое
+            if bw in comb: # если есть
+                flag = False # опускаем флаг
+        if flag == True: # если флаг поднят
+            cnt += 1 # прибавляем к счетчику
 
-print(cnt)
+print(cnt) #выводим счетчик

@@ -1,12 +1,11 @@
+from itertools import product
+abc = '0123'
 cnt = 0
+combs = product(abc, repeat=3)
+for comb in combs:
+    comb = ''.join(comb)
+    if len(set(comb)) == len(comb):
+        if comb == ''.join(sorted(comb)[::-1]):
+            cnt += 1
 
-for i in range(100, 1000):
-    stroka = ''
-    n = i
-    while n != 0:
-        stroka = str(n%4) + stroka
-        n = n // 4
-    print(stroka)
-    if len(set(stroka)) == len(stroka) and stroka == sorted(stroka):
-        cnt += 1
 print(cnt)
