@@ -27,18 +27,4 @@ for i in range(len(columns) - 1):
     if l == max_i:
         print(max_i, i)
 print(max_i)
-# for j in range(len(pole1d) - K, len(pole1d)):
-#     print(j)
-#     for k in range(j%K, j, K):
-#         print(k)
-#         break
-# for i in range(1, M+1):
-#     for j in range(len(pole1d) - K*i, len(pole1d)):
-#         #print(j)
-#         above = sum([pole1d[k] + pole1d[k+1] for k in range(j%K, j, K)])
-#         #above2 = sum([pole1d[k] for k in range((j+1)%K, j+1, K)])
-#         if above == 0:
-#             print(above)
-    # for j in range(K-1):
-    #     if sum([pole[k][j] for k in range(0, i)]) + sum([pole[k][j+1] for k in range(0, i)]) == 0:
-    #         print(i, j)
+
