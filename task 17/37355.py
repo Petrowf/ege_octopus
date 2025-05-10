@@ -1,5 +1,6 @@
 with open('37355.txt', encoding='utf-8') as file:
     numbers = list(map(int, file.readlines()))
+    file.truncate()
 
 cnt = 0
 max_sum = 0
