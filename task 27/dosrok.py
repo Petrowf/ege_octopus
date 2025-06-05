@@ -33,7 +33,7 @@ for point1 in claster2:
         min_sum = sum_dist
         centre2 = point1
 
-print(int((centre1[0] + centre2[0])*5000), int((centre1[1] + centre2[1])*5000))
+print(int((((centre1[0] + centre2[0])/2))*10000), int((centre1[1] + centre2[1])*5000))
 
 claster1 = []
 claster2 = []
